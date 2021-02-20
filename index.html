@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+
+  <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/stylesheet" href="/WeatherDash/style.css"/>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-3 col-sm-12 pt-3">
+            <h5 class="pl-3">Search for a City:</h5>
+            <div class="input-group pl-3">
+                <div class="custom-file">
+                    <input id="city" type="text" class="form-control">
+                </div>
+                    <div class="input-group-append">
+                       <button id="search" type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            <div class="btn-group-vertical" id="city-btn"></div>
+        </div>
+    </div>
+    <div class="container-md">
+        <div class="container-hide">
+            <div class="row">
+                <h5 class="pt-3 pl-3" id="cityName" class="card-title"></h5>
+            </div>
+            <p id="temp" class="card-text"></p>
+            <p id="humidity" class="card-text"></p>
+            <p id="wind" class="card-text"></p>
+            <div id="UV" class="pb-2 mb-4"></div>
+        </div>
+    </div>
+    <div class="container">
+        <h5 id="forecast"></h5>
+        <div class="row">
+            class="ajax-section">
+  <div class="container">
+    <ul class="cities"></ul>
+    <li class="city">
+        <h2 class="city-name" data-name="...">
+          <span>...</span>
+          <sup>...</sup>
+        </h2>
+      </li>
+  </div>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Code to the JavaScript File -->
+    <script src="weather.js"></script>
+  
+</body>
+</html>
