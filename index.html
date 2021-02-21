@@ -8,7 +8,7 @@
 
   <!-- Font Awesome CSS Icons (For cool glyphicons) -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" type="text/stylesheet" href="/style.css"/>
+  <link rel="stylesheet" href="../WeatherDash/style.css"/>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
             <h5 class="pl-3">Search for a City:</h5>
             <div class="input-group pl-3">
                 <div class="custom-file">
-                    <input id="city" type="text" class="form-control">
+                    <input id="city-text" type="text" class="form-control">
                 </div>
                     <div class="input-group-append">
                        <button id="search" type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
@@ -27,7 +27,7 @@
         </div>
     </div>
     <div class="container-md">
-        <div class="container-hide">
+        <div class="container hide">
             <div class="row">
                 <h5 class="pt-3 pl-3" id="cityName" class="card-title"></h5>
             </div>
@@ -40,21 +40,40 @@
     <div class="container">
         <h5 id="forecast"></h5>
         <div class="row">
-        <div class="ajax-section">
-  <div class="container">
-    <ul class="cities"></ul>
-    <li class="city">
-        <h2 class="city-name" ></h2>
+            <ul id="day1">
+            <li id="temp1">
+            <li id="humid1">
+            </ul>
+           
+                <ul id="day2">
+                <li id="temp2">
+                <li id="humid2">
+                </ul>
+               
+                    <ul id="day3">
+                    <li id="temp3">
+                    <li id="humid3">
+                    </ul>
+                   
+                        <ul id="day4">
+                        <li id="temp4">
+                        <li id="humid4">
+                        </ul>
+                       
+                            <ul id="day5">
+                            <li id="temp5">
+                            <li id="humid5">
+                            </ul>
       </li>
   </div>
 
         </div>
     </div>
-
+    
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <!-- Code to the JavaScript File -->
-    <script src="weather.js"></script>
-  
 </body>
+
+    <script src="../WeatherDash/weather.js"></script>
 </html>
