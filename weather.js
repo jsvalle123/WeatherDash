@@ -41,14 +41,33 @@ $("#search").on("click", function (event) {
         renderButtons();
     }
  
+    const cityname = "Phoenix"
 const apiKey ="06b9d7db0be1d26a0451b984e403fc37";
-const url =`api.openweathermap.org/data/2.5/forecast?q={cityname}&appid=06b9d7db0be1d26a0451b984e403fc37`;
-
+const url =`http://api.openweathermap.org/data/2.5/forecast?q=${cityname}&appid=${apiKey}`;
 fetch(url)
 .then(response => response.json())
 .then(data => console.log(data));
+function displayCityweather() {
+    var cityName = response.name;
+
+    console.log(cityName)
+    console.log(date)
+    $("#cityName").text(cityName + date);
+
+    var temper = response.main.temp;
+    console.log(temper);
+    $("#temp").text(temper + "°F");
+
+    var hum = response.main.humity;
+    console.log(hum);
+    $("#humidity").text("humidity: " + hum + "%");
+    var wind = response.wind.speed;
+    console.log(wind);
+    $("#wind").text("Wind Speed: " + wind + " MPH")
+}
+renderButtons();
 $("#forecast").text("5-Day Forcast:");
-$(document).on("click", ".city", displayCityweather);
+$(document).on("click", ".city", displayCityweather());
 //function to get API info for each city button
         $(".day1").text(city.name);
         $(".day2").text(city.name);
@@ -68,30 +87,10 @@ $(document).on("click", ".city", displayCityweather);
         $(".humid4").text("Humidity: "+list.main.humidity + "%");
         $(".humid5").text("Humidity: "+list.main.humidity + "%");
         $(document).on("click", ".city", displayCityweather);
-},
-),
-       function displayCityweather() {
-           var city = $(this).attr("data-name");
-           var date = moment().format("DD/MM/YYYY");
-           var cityName = response.name;
-       
-           console.log(cityName)
-           console.log(date)
-           $("#cityName").text(cityName + date);
-       
-           var temper = response.main.temp;
-           console.log(temper);
-           $("#temp").text(temper + "°F");
-       
-           var hum = response.main.humity;
-           console.log(hum);
-           $("#humidity").text("humidity: " + hum + "%");
-           var wind = response.wind.speed;
-           console.log(wind);
-           $("#wind").text("Wind Speed: " + wind + " MPH")
-            
+        return response.json();
+})
+   renderButtons();
+    
 
-           return response.json();
-        }
-        displayCityweather();
-        renderButtons();
+
+       
